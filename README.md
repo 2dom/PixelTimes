@@ -35,7 +35,7 @@ do
   ffmpeg -i $i -vf 'lutyuv=y=gammaval(1.4)' -vcodec rawvideo -pix_fmt rgb24 $base_name.rgb
 done
 ```
-This will generate .rgb (raw data) animation files for the ESP. Last but not leat, copy all .rgb files in the /data folder of the PixelTimes Arduino project and re-upload via ESP8266 Sketch Data Upload tool.
+This will generate .rgb (raw data) animation files for the ESP. Last but not least, copy all .rgb files in the /data folder of the PixelTimes Arduino project and re-upload via ESP8266 Sketch Data Upload tool.
 
 <img width="100%" align="center" src="/images/lighthouse.gif" alt="Lighthouse">
 
