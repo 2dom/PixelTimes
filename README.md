@@ -39,7 +39,7 @@ This will generate .rgb (raw data) animation files for the ESP. Last but not lea
 
 <img width="100%" align="center" src="/images/lighthouse.gif" alt="Lighthouse">
 
-## Marge with PixelTime
+## Merge with PixelTime
 Since the weather information from [PixelTime](https://2dom.github.io/PixelTime/) is still somewhat usefull I decided to retain that functionality. To achieve that, you can now switch between animations and weather using the PRGM switch on the ESP8266/NodeMCU (e.g. exposed via the [NodeMCU panel mount](https://www.thingiverse.com/thing:2665294)). So you can either enjoy this:
 
 
