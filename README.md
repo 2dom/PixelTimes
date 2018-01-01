@@ -1,7 +1,8 @@
 # PixelTimes
 
 
-<p align="center"><img width="100%" align="center" src="/images/drop.gif" alt="Drop"></p>
+<img width="100%" align="center" src="/images/drop.gif" alt="Drop">
+
 This project is a logical progession of [PixelTime](https://2dom.github.io/PixelTime/) and the
 [P10 LED MATRIX](https://github.com/2dom/P10_matrix) library.
 
