@@ -6,7 +6,7 @@
 This project is a logical progession of [PixelTime](https://2dom.github.io/PixelTime/) and the
 [P10 LED MATRIX](https://github.com/2dom/P10_matrix) library.
 
-As the P10_matrix library became more capable, PixelTime was simply a bit boring to look at 24/7. So I started playing with 32x16 gif animations and decided that the P10 matrix would make an excellent little nerdy picture frame. This project is actually rather straightforward. What ate most of my time was the latency optimizations to reduce flicker.
+As the P10_matrix library became more capable, PixelTime was simply a bit boring to look at 24/7. So I started playing with 32x16 gif animations and decided that the P10 matrix would make an excellent little nerdy picture frame. To accomplish that is actually rather straightforward. What ate most of my time was the latency optimizations to reduce flicker.
 
 ## Set-up
 To get this to work you will need to perform the following steps
