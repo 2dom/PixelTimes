@@ -21,7 +21,7 @@ To get this to work you will need to perform the following steps
 
 
 ## Create animations
-You can really use any video/gif file as a source for your animations, however, low-res gif animations probably make the most sense. A fantastic source for 16x16 animations is [Eboy](https://db.eboy.com/pool/everything/1) - all animations shown on this page are from there. As I was told by Eboy the perfect fit to this little project is no accident -  most of these animations were actually created to fit a neat (commercially available) animated picture-frame called [GameFrame](https://ledseq.com/product/game-frame/).
+You can really use any video/gif file as a source for your animations, however, low-res gif animations probably make the most sense. A fantastic source for 16x16 animations is [Eboy](https://db.eboy.com/pool/everything/1) - all animations shown on this page are from there. As I was told by Eboy, the perfect fit of their animations to this little project is no accident -  most of these animations were actually created to fit a neat (commercially available) animated picture-frame called [GameFrame](https://ledseq.com/product/game-frame/).
 
 [Draw](http://www.drawbang.com/) also has a few usable animations.
 
