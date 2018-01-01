@@ -1,7 +1,7 @@
 # PixelTimes
 
 
-<p align="center"><img width="80%" align="center" src="/images/drop.gif" alt="Drop"></p>
+<p align="center"><img width="100%" align="center" src="/images/drop.gif" alt="Drop"></p>
 This project is a logical progession of [PixelTime](https://2dom.github.io/PixelTime/) and the
 [P10 LED MATRIX](https://github.com/2dom/P10_matrix) library.
 
@@ -16,7 +16,7 @@ To get this to work you will need to perform the following steps
   * Connect your ESP8266/NodeMCU to your computer, open the PixelTimes project in Arduino and select the "ESP8266 Sketch Data Upload" from the tools menu. This will write some some initial animations to the EPS8266/NodeMCU's flash memory.
   * Compile PixelTimes.ino and flash to ESP8266/NodeMCU
 
-<img width="80%" align="center" src="/images/fireworks.gif" alt="FireWorks">
+<img width="100%" align="center" src="/images/fireworks.gif" alt="FireWorks">
 
 
 ## Create animations
@@ -36,14 +36,14 @@ done
 ```
 This will generate .rgb (raw data) animation files for the ESP. Last but not leat, copy all .rgb files in the /data folder of the PixelTimes Arduino project and re-upload via ESP8266 Sketch Data Upload tool.
 
-<img width="80%" align="center" src="/images/lighthouse.gif" alt="Lighthouse">
+<img width="100%" align="center" src="/images/lighthouse.gif" alt="Lighthouse">
 
 ## Marge with PixelTime
 Since the weather information from [PixelTime](https://2dom.github.io/PixelTime/) is still somewhat usefull I decided to retain that functionality. Currently, you can swith between animations and weather using the PRGM switch on the ESP8266/NodeMCU (e.g. exposed via the [NodeMCU panel mount](https://www.thingiverse.com/thing:2665294)). So you can either enjoy this:
 
 
-<img width="80%" align="center" src="/images/PixelTime.jpg" alt="PixelTime">
+<img width="100%" align="center" src="/images/PixelTime.jpg" alt="PixelTime">
 
 or this:
 
-<img width="80%" align="center" src="/images/sea.gif" alt="Sea">
+<img width="100%" align="center" src="/images/sea.gif" alt="Sea">
