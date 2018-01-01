@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta property="og:image" content="https://raw.github.com/2dom/PixelTimes/master/images/PixelTime_animated.GIF" />
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="PixelTimes : Animated picture frame meets weather clock" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>PixelTimes</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/2dom/PixelTimes">View on GitHub</a>
+
+          <h1 id="project_title">PixelTimes</h1>
+          <h2 id="project_tagline">PixelTimes : Animated picture frame meets weather clock</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/2dom/PixelTimes/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/2dom/PixelTimes/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>Rationale</h2>
+
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/drop.gif" alt="Drop">
+
+        This project is a logical progression of <a href="https://2dom.github.io/PixelTime/">PixelTime</a> and the
+        <a href="https://github.com/2dom/P10_matrix">P10_matrix library</a>.
+
+        As the P10_matrix library became more capable, PixelTime was simply a bit boring to look at 24/7. So I started playing with 32x16 gif animations and decided that the P10 matrix would make an excellent little nerdy picture frame. To accomplish that is actually rather straightforward. What ate most of my time was the latency optimizations to reduce flicker.
+
+        <h2>Set-up</h2>
+        To get this to work you will need to perform the following steps
+        <ul>
+          <li>Install <a href="https://www.arduino.cc/en/Main/Software">Arduino</a></li>
+          <li>Install <a href="https://www.arduino.cc/en/Main/Software">ESP8266 core for Arduino</a></li>
+          <li>Install the <a href="http://esp8266.github.io/Arduino/versions/2.0.0/doc/filesystem.html">SPIFFS upload tool</a>.</li>
+          <li>Download the the <a href="https://github.com/2dom/P10_matrix">P10_matrix</a> library and move it to your libraries folder. Connect your LED matrix as described on the  library web-page.</li>
+          <li>Connect your ESP8266/NodeMCU to your computer, open the PixelTimes project in Arduino and select the "ESP8266 Sketch Data Upload" from the tools menu. This will write some some initial animations to the EPS8266/NodeMCU's flash memory.</li>
+          <li>Compile PixelTimes.ino and flash to ESP8266/NodeMCU</li>
+        </ul>
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master//images/fireworks.gif" alt="FireWorks">
+
+        <h2>Create animations</h2>
+        You can really use any video/gif file as a source for your animations, however, low-res gif animations probably make the most sense. Sources for 16x16 animations are
+        <ul>
+          <li><a href="https://db.eboy.com/pool/everything/1">Eboy</a> - their animations are fantastic (all animations shown on this page are from there). As I was told by Eboy, the perfect fit of their animations to this little project is no accident -  most of these animations were  created to fit a neat (commercially available) animated picture-frame called <a href="https://ledseq.com/product/game-frame/">GameFrame</a>.</li>
+          <li><a href="http://www.drawbang.com/">Draw!</a></li>
+        </ul>
+        Since the P10 matrix is 32x16 you will have to modify these animations to fit the display (I used Gimp). Once you have a bunch of 32x16 gifs in a folder you can simply execute the following script (also in the gifs folder):
+<br><br>
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">#!/bin/bash</span>
+          <span style="color: #008800; font-weight: bold">for </span>i in *.gif;
+          <span style="color: #008800; font-weight: bold">do</span>
+  <span style="color: #008800; font-weight: bold">          </span><span style="color: #996633">base_name</span><span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">$(</span>basename <span style="background-color: #fff0f0">&quot;$i&quot;</span> .gif<span style="color: #008800; font-weight: bold">)</span>
+            ffmpeg -i <span style="color: #996633">$i</span> -vf <span style="background-color: #fff0f0">&#39;lutyuv=y=gammaval(1.4)&#39;</span> -vcodec rawvideo -pix_fmt rgb24 <span style="color: #996633">$base_name</span>.rgb
+          <span style="color: #008800; font-weight: bold">done</span>
+  </pre></div>
+<br>
+        This will generate .rgb (raw data) animation files for the ESP. Last but not least, copy all .rgb files in the /data folder of the PixelTimes Arduino project and re-upload via ESP8266 Sketch Data Upload tool.
+
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master//images/lighthouse.gif" alt="Lighthouse">
+
+        <h2> Merge with PixelTime</h2>
+        Since the weather information from <a href="https://2dom.github.io/PixelTime/">PixelTime</a> is still somewhat useful I decided to retain that functionality. You can now switch between animations and weather display using the PRGM switch on the ESP8266/NodeMCU (e.g. exposed via the <a href="https://www.thingiverse.com/thing:2665294">NodeMCU panel mount</a>). So you can either enjoy this:
+
+
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master//images/PixelTime.jpg" alt="PixelTime">
+
+        or this:
+
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master//images/sea.gif" alt="Sea">
+
+
+
+<h2>Bill of materials</h2>
+
+<p>Check <a href="https://2dom.github.io/PixelTime/">PixelTime</a> for building instructions</p>
+
+<ul>
+<li>P10 LED Matrix (Aliexpress) – 17 EUR</li>
+<li>Dupond jumper cables (Aliexpress) – 0.5 EUR</li>
+<li>NodeMCU ESP8266 – 3 EUR</li>
+<li>Acrylics – 10 EUR</li>
+<li>3D prints – 3 EUR (plastics)</li>
+<li>2A USB charger and 2m cable (ebay) – 8 EUR</li>
+<li>M3x50mm screws and nuts – 2 EUR</li>
+<li>Box – Free</li>
+<li><strong>TOTAL: 43 EUR</strong></li>
+</ul>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">PixelTimes is maintained by <a href="https://github.com/2dom">2dom</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+
+
+  </body>
+</html>
