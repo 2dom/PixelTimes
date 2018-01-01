@@ -5,7 +5,7 @@
 This project is a logical progession of [PixelTime](https://2dom.github.io/PixelTime/) and the
 [P10 LED MATRIX](https://github.com/2dom/P10_matrix) library.
 
-As the P10_matrix library became more capable, PixelTime was simply a bit boring to look at. So I started playing around with 32x16 gif animations and decided that the P10 matrix would make an excellent little nerdy picture frame. To do this is rather straightforward, what ate most of my time was the latancy optimizations to reduce flicker.
+As the P10_matrix library became more capable, PixelTime was simply a bit boring to look at 24/7. So I started playing with 32x16 gif animations and decided that the P10 matrix would make an excellent little nerdy picture frame. This project is actually rather straightforward. What ate most of my time was the latency optimizations to reduce flicker.
 
 ## Set-up
 To get this to work you will need to perform the following steps
@@ -19,7 +19,9 @@ To get this to work you will need to perform the following steps
 ![FireWorks](/images/fireworks.gif)
 
 ## Create animations
-You can really use any video/gif file as a source for your animations, however, low-res gif animations probably make the most sense. A fantastic source for 16x16 animations is [eboy](https://db.eboy.com/pool/everything/1). As I was told by Eboy, most of these animations were actually made to fit a neat (commercially available) animated picture frame called [GameFrame](https://ledseq.com/product/game-frame/).  [Draw](http://www.drawbang.com/) also has a few usable animations.
+You can really use any video/gif file as a source for your animations, however, low-res gif animations probably make the most sense. A fantastic source for 16x16 animations is [Eboy](https://db.eboy.com/pool/everything/1). As I was told by them, most of these animations were actually made to fit a neat (commercially available) animated picture-frame called [GameFrame](https://ledseq.com/product/game-frame/).
+
+[Draw](http://www.drawbang.com/) also has a few usable animations.
 
 Since the P10 matrix is 32x16 you will have to modify these animations to fit the display (I used Gimp). Once you have a bunch of 32x16 gifs in a folder you simply execute image_to_array.sh in gifs folder:
 
@@ -41,6 +43,6 @@ Since the weather information from [PixelTime](https://2dom.github.io/PixelTime/
 
 ![PixelTime](/images/PixelTime.jpg)
 
-or this:     
+or this:
 
 ![Sea](/images/sea.gif)
