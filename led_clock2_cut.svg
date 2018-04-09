@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="600mm" height="300mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 60000 30000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#2B2A29;stroke-width:7.62}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_808792832">
+   <rect class="fil0 str0" x="1888" y="2181" width="35000" height="18000" rx="562" ry="500"/>
+   <circle class="fil0 str0" cx="2388" cy="2681" r="205"/>
+   <circle class="fil0 str0" cx="10888" cy="2681" r="205"/>
+   <circle class="fil0 str0" cx="19388" cy="2681" r="205"/>
+   <circle class="fil0 str0" cx="27888" cy="2681" r="205"/>
+   <circle class="fil0 str0" cx="36388" cy="2681" r="205"/>
+   <circle class="fil0 str0" cx="2388" cy="11181" r="205"/>
+   <circle class="fil0 str0" cx="36388" cy="11181" r="205"/>
+   <circle class="fil0 str0" cx="2388" cy="19681" r="205"/>
+   <circle class="fil0 str0" cx="10888" cy="19681" r="205"/>
+   <circle class="fil0 str0" cx="19388" cy="19681" r="205"/>
+   <circle class="fil0 str0" cx="27888" cy="19681" r="205"/>
+   <circle class="fil0 str0" cx="36388" cy="19681" r="205"/>
+  </g>
+ </g>
+</svg>
