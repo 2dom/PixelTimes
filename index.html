@@ -138,14 +138,14 @@
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/shark.gif" alt="Drop">
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/lamp.gif" alt="Drop">
 
-        <a href="http://eboy.com">Eboy</a>, the artists behind the girl on the beach and the shark generously gave me permission to use them for PixelTimes. Their collections is simply awesome and goes far beyond 32x16 animations (see <a href="https://db.eboy.com/pool/everything/1">Eboy db</a>) and they sell robots too!.<br>
+          <a href="http://eboy.com">Eboy</a>, the artists behind the girl on the beach and the shark animations, generously gave me permission to use them for PixelTimes. Their collections is simply awesome and goes far beyond 32x16 animations (see <a href="https://db.eboy.com/pool/everything/1">Eboy db</a>) and they sell robots too!.<br>
         If your are interested in buying an animated picture-frame rather than making one yourself, Eboy are also responsible for all the cool animations that come with <a href="https://ledseq.com/product/game-frame/">GameFrame</a>.
 
 
         <h2>Create animations</h2>
         If you would like to create your own animations, you can do so using any gif file as the source.<br>
         The first step is always to scale the gif of your choice to the target resolution of 32x16 (I use Gimp for that purpose). Once you have a bunch of 32x16 gifs, download the following two scripts from <a href="https://github.com/2dom/PixelTimes">here</a>: image_to_array.sh and create_progmem.py. The former will convert the gif files to .rgb files containing raw image data. The latter will then create convert all .rgb files to the anim_data.h required by PixelTimes.ino.<br>
-        So once you executed both scripts, simply copy the resulting anim_data.h in the same folder as PixelTimes.h<br>
+        So once you executed both scripts, simply copy the resulting anim_data.h in the folder with PixelTimes.ino<br>
         The final step is now to flash compile the new firmware and flash it to the NodeMCU.
 
           <h2> Merge with PixelTime</h2>
