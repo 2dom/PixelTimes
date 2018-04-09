@@ -56,7 +56,7 @@
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/all_parts.jpg" alt="Drop">
 
         <h3>Front and back-plate</h3>
-        These are two identical laser-cut parts. I used 3mm acrylics with 50% gray. The corresponding file "led_clock2_cut" is available <a href="https://github.com/2dom/PixelTimes">here</a>
+        These are two identical laser-cut parts. I used 3mm acrylics with 50% gray. The corresponding file "led_clock2_cut" is available <a href="https://github.com/2dom/PixelTimes">here</a>.
 
         <h3>NodeMCU and panel mount</h3>
           If your NodeMCU comes with pre-soldered pin-headers, cut them off above the spacers and use a file to grind them level. Next, 3D print my NodeMCU panel mount available <a href="https://www.thingiverse.com/thing:2665294">here</a>.
@@ -75,7 +75,7 @@
 
 
         <h3>LED matrix separator grid</h3>
-        Print the 16x16 grid from <a href="https://www.thingiverse.com/thing:2668845">here</a> two times and glue it together (super glue works fine) to form one 32x16 grid
+        Print the 16x16 grid from <a href="https://www.thingiverse.com/thing:2668845">here</a> two times and glue it together (super glue works fine) to form one 32x16 grid.
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/separator.jpg" alt="Drop">
 
         <h3>Front and back paper-screen</h3>
@@ -137,7 +137,7 @@
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/shark.gif" alt="Drop">
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/lamp.gif" alt="Drop">
 
-          <a href="http://eboy.com">Eboy</a>, the artists behind the girl on the beach and the shark animations, generously gave me permission to use them for PixelTimes. Their collections is simply awesome and goes far beyond 32x16 animations (see <a href="https://db.eboy.com/pool/everything/1">Eboy db</a>) and they sell robots too!.<br>
+        <a href="http://eboy.com">Eboy</a>, the artists behind the girl on the beach and the shark animations, generously gave me permission to use them for PixelTimes. Their collections is simply awesome and goes far beyond 32x16 animations (see <a href="https://db.eboy.com/pool/everything/1">Eboy db</a>) and they sell robots too!.<br>
         If your are interested in buying an animated picture-frame rather than making one yourself, Eboy are also responsible for all the cool animations that come with <a href="https://ledseq.com/product/game-frame/">GameFrame</a>.
 
 
@@ -145,7 +145,9 @@
         If you would like to create your own animations, you can do so using any gif file as the source.<br>
         The first step is always to scale the gif of your choice to the target resolution of 32x16 (I use Gimp for that purpose). Once you have a bunch of 32x16 gifs, download the following two scripts from <a href="https://github.com/2dom/PixelTimes">here</a>: image_to_array.sh and create_progmem.py. The former will convert the gif files to .rgb files containing raw image data. The latter will then create convert all .rgb files to the anim_data.h required by PixelTimes.ino.<br>
         So once you executed both scripts, simply copy the resulting anim_data.h in the folder with PixelTimes.ino<br>
-        The final step is now to flash compile the new firmware and flash it to the NodeMCU.
+        The final step is to compile the new firmware and flash it to the NodeMCU.<br>
+        <br>
+        Congratulations! You made it all the way through - enjoy your PixelTimes.
 
           <h2> Merge with PixelTime</h2>
         Since the weather information from <a href="https://2dom.github.io/PixelTime/">PixelTime</a> is still somewhat useful I decided to retain that functionality. You can now switch between animations and weather display using the PRGM switch on the ESP8266/NodeMCU (e.g. exposed via the <a href="https://www.thingiverse.com/thing:2665294">NodeMCU panel mount</a>).
