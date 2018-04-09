@@ -126,7 +126,7 @@
         <ul>
           <li>Install <a href="https://www.arduino.cc/en/Main/Software">Arduino</a></li>
           <li>Install <a href="https://www.arduino.cc/en/Main/Software">ESP8266 core for Arduino</a></li>
-          <li>Download the <a href="https://github.com/2dom/PxMatrix">PxMatrix</a> library and move it to your libraries folder. Connect your LED matrix as described on the library web-page.</li>
+          <li>Download the <a href="https://github.com/2dom/PxMatrix">PxMatrix</a> library and move it to your libraries folder (connect your LED matrix as described on the library web-page).</li>
           <li>Connect your ESP8266/NodeMCU to your computer</li>
           <li>Compile PixelTimes.ino and flash it to ESP8266/NodeMCU</li>
         </ul>
@@ -137,12 +137,12 @@
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/lamp.gif" alt="Drop">
 
         <a href="http://eboy.com">Eboy</a>, the artists behind the girl on the beach and the shark generously gave me permission to use them for PixelTimes. Their collections is simply awesome and goes far beyond 32x16 animations (see <a href="https://db.eboy.com/pool/everything/1">Eboy db</a>) and they sell robots too!.<br>
-        If your are interested in buying an animated picture-frame rather than making one yourself, Eboy are also responsible for all the cool animations that come with <a href="https://ledseq.com/product/game-frame/">GameFrame</a>
+        If your are interested in buying an animated picture-frame rather than making one yourself, Eboy are also responsible for all the cool animations that come with <a href="https://ledseq.com/product/game-frame/">GameFrame</a>.
 
 
         <h2>Create animations</h2>
         If you would like to create your own animations, you can do so using any gif file as the source.<br>
-        The first step is always to scale the gif of your choice to the target resolution (I use Gimp fro that purpose). Once you have a bunch of 32x16 gifs in a folder you have to download the following two scripts from <a href="https://github.com/2dom/PixelTimes">here</a>: image_to_array.sh and create_progmem.py. The former will convert the gif files to .rgb files with raw image data. The latter will then create an anim_data.h file from all .rgb files to be used with PixelTimes.ino.<br>
+        The first step is always to scale the gif of your choice to the target resolution of 32x16 (I use Gimp for that purpose). Once you have a bunch of 32x16 gifs, download the following two scripts from <a href="https://github.com/2dom/PixelTimes">here</a>: image_to_array.sh and create_progmem.py. The former will convert the gif files to .rgb files containing raw image data. The latter will then create convert all .rgb files to the anim_data.h required by PixelTimes.ino.<br>
         So once you executed both scripts, simply copy the resulting anim_data.h in the same folder as PixelTimes.h<br>
         The final step is now to flash compile the new firmware and flash it to the NodeMCU.
 
