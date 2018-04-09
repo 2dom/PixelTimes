@@ -65,7 +65,7 @@
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/node_mcu_cut.jpg" alt="Drop">
 
         <h3>Frame segments</h3>
-        The design files for the frame segment can be downloaded <a href="https://www.thingiverse.com/thing:2854261">here</a>. You will need to print 11 standard ones and one with a cutout for the NodeMCU panel mount. The segments form a series of chain-links that are sandwiched between the front- and back-plate.
+        The design files for the frame segments can be downloaded <a href="https://www.thingiverse.com/thing:2854261">here</a>. You will need to print 11 standard ones and one with a cutout for the NodeMCU panel mount. The segments form a series of chain-links that are sandwiched between the front- and back-plate.
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/frame_detail1.jpg" alt="Drop">
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/frame_detail2.jpg" alt="Drop">
 
@@ -116,7 +116,7 @@
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step10.jpg" alt="Drop">
 
         Fasten all screws with the corresponding nuts and voila … display done.
-        It should now look something like this:<br>
+        It should look something like this:<br>
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/back.jpg" alt="Drop">
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/logo.jpg" alt="Drop">
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/logo2.jpg" alt="Drop">
@@ -124,7 +124,7 @@
 
         <h2>Software</h2>
         To get the display to work you will need to perform the following steps:<br>
-
+        <br>
         <ul>
           <li>Install <a href="https://www.arduino.cc/en/Main/Software">Arduino</a></li>
           <li>Install <a href="https://www.arduino.cc/en/Main/Software">ESP8266 core for Arduino</a></li>
@@ -138,14 +138,14 @@
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/shark.gif" alt="Drop">
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/lamp.gif" alt="Drop">
 
-        <a href="http://eboy.com">Eboy</a>, the artists behind the girl on the beach and the shark animations, generously gave me permission to use them for PixelTimes. Their collections is simply awesome and goes far beyond 32x16 animations (see <a href="https://db.eboy.com/pool/everything/1">Eboy db</a>) and they sell robots too!.<br>
+        <a href="http://eboy.com">Eboy</a>, the artists behind the girl on the beach and the shark animations, generously gave me permission to use them for PixelTimes. Their collections is simply awesome and goes far beyond 32x16 animations (see <a href="https://db.eboy.com/pool/everything/1">Eboy db</a>) and they sell robots too!<br>
         If your are interested in buying an animated picture-frame rather than making one yourself, Eboy are also responsible for all the cool animations that come with <a href="https://ledseq.com/product/game-frame/">GameFrame</a>.
 
 
         <h2>Create animations</h2>
         If you would like to create your own animations, you can do so using any gif file as the source.<br>
         The first step is always to scale the gif of your choice to the target resolution of 32x16 (I use Gimp for that purpose). Once you have a bunch of 32x16 gifs, download the following two scripts from <a href="https://github.com/2dom/PixelTimes">here</a>: image_to_array.sh and create_progmem.py. The former will convert the gif files to .rgb files containing raw image data. The latter will then create convert all .rgb files to the anim_data.h required by PixelTimes.ino.<br>
-        So once you executed both scripts, simply copy the resulting anim_data.h in the folder with PixelTimes.ino<br>
+        So once you executed both scripts, simply copy the resulting anim_data.h in the folder with PixelTimes.ino.
         The final step is to compile the new firmware and flash it to the NodeMCU.<br>
         <br>
         Congratulations! You made it all the way through - enjoy your PixelTimes!
