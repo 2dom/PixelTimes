@@ -38,7 +38,7 @@
         This project is the logical progression of <a href="https://2dom.github.io/PixelTime">PixelTime</a> and attempts to reduce the amount of manual labor to an absolute minimum. This also minimizes the build time whilst removing most of the complexity of building a case leading essentially to a plug and play kit. With all components on the table, it took me about two hours to assemble the entire display. <br>
         <br>
         In terms of functionality, I created a new display library PxMatrix that is more capable than the original P10_Matrix library. In now supports 3bit color per RGB channel and can handle animations with minimal flicker. This opened up the possibility to create a nice little 32x16 picture frame for pixel animations.
-        <h2>Parts</h2>
+        <h2>Tools</h2>
         In order to create all the components for this display you will need (access to) the following tools:<br>
         <ul>
           <li>Laser cutter</li>
@@ -52,55 +52,68 @@
         Your local makerspace should have most of those tools, otherwise you may consider using online services.<br>
         <h2>Make the display</h2>
         So let's get started! This image shows all the parts that you will make ... I will got through the necessary steps one-by-one.
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/all_parts.jpg" alt="Drop">
 
         <h3>Front and back-plate</h3>
         These are two identical laser-cut parts. I used 3mm acrylics with 50% gray. The corresponding file "led_clock2_cut" is available <a href="https://github.com/2dom/PixelTimes">here</a>
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/all_parts.jpg" alt="Drop">
+
         <h3>NodeMCU and panel mount</h3>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/node_mcu_cut.jpg" alt="Drop">
-        If your NodeMCU comes with pre-soldered pin-headers, cut them off above the spacers and use a file to grind them level. Next, 3D print my NodeMCU panel mount available <a href="https://www.thingiverse.com/thing:2665294">here</a>.<br>
+          If your NodeMCU comes with pre-soldered pin-headers, cut them off above the spacers and use a file to grind them level. Next, 3D print my NodeMCU panel mount available <a href="https://www.thingiverse.com/thing:2665294">here</a>.<br>
         The panel mount integrates the NodeMCU into the frame and lets you push the buttons from the outside.
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/node_mcu_cut.jpg" alt="Drop">
 
         <h3>Prepare display</h3>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/matrix_back.jpg" alt="Drop">
-         Connect the display to the NodeMCU as described <a href="https://github.com/2dom/PxMatrix">here</a>. Also cut the frame of the display in the bottom right corner to make space for the NodeMCU. Then install the NodeMCU into the NodeMCU panel mount and screw it to the cut-out frame segment.
+           Connect the display to the NodeMCU as described <a href="https://github.com/2dom/PxMatrix">here</a>. Also cut the frame of the display in the bottom right corner to make space for the NodeMCU. Then install the NodeMCU into the NodeMCU panel mount and screw it to the cut-out frame segment.
+          <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/matrix_back.jpg" alt="Drop">
 
         <h3>Frame segments</h3>
+        The design files for the frame segment can be downloaded <a href="https://www.thingiverse.com/thing:2854261">here</a>. You will need to print 11 standard ones and one with a cutout for the NodeMCU panel mount. The segments form a series of chain-links that are sandwiched between the front- and back-plate.
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/frame_detail1.jpg" alt="Drop">
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/frame_detail2.jpg" alt="Drop">
-        The design files for the frame segment can be downloaded <a href="https://www.thingiverse.com/thing:2854261">here</a>You will need to print 11 standard ones and one with a cutout for the NodeMCU panel mount. The segments form a series of chain-links that are sandwiched between the front- and back-plate.
+
         <h3>LED matrix separator grid</h3>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/separator.jpg" alt="Drop">
         Print the 16x16 grid from <a href="https://www.thingiverse.com/thing:2668845">here</a> two times and glue it together (super glue works fine) to form one 32x16 grid
-        <h3>Front and back paper-screen</a>
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/separator.jpg" alt="Drop">
+
+        <h3>Front and back paper-screen</h3>
+        (Modify) and print the “led_clock_back” and “led_clock_diff” from <a href="https://github.com/2dom/PixelTimes">here</a> and cut them out.
+
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/screen_cut.jpg" alt="Drop">
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/back_cut.jpg" alt="Drop">
 
-        (Modify) and print the “led_clock_back” and “led_clock_diff” from <a href="https://github.com/2dom/PixelTimes">here</a> and cut them out.
 
         <h2>Assembly</h2>
         We will start from the back and build the display up step-by-step.<br>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step1.jpg" alt="Drop">
         First, stick all screws through the first piece of acrylic and put it screw-heads down on the table.<br>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step2.jpg" alt="Drop">
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step1.jpg" alt="Drop">
         Then install the paper-screen (backside - “led_clock_back”) where the print side faces downwards. <br>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step3.jpg" alt="Drop">
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step2.jpg" alt="Drop">
+
         Next, we install all the frame segments by placing them on the screws one-by-one. Make sure that you leave a gap at the bottom right where the NodeMCU panel mount will live. (Note that you will have to follow the correct up-down sequence of the segments so it will fit). <br>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step4.jpg" alt="Drop">
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step3.jpg" alt="Drop">
+
         Now place the panel in the frame and install the NodeMCU panel mount.<br>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step5.jpg" alt="Drop">
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step4.jpg" alt="Drop">
+
         You can now place the separator grid on top and make sure everything fits ok.<br>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step6.jpg" alt="Drop">
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step5.jpg" alt="Drop">
+
         If it does, fix the separator grid to the matrix using 4 pieces of PVC tape around the corners.<br>
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step6.jpg" alt="Drop">
+
+        In order to center the grid and matrix within the frame I wedged a few pieces of anti-static foam in between.<br>
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step8.jpg" alt="Drop">
         <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/spacers_installed.jpg" alt="Drop">
-        In order to center the grid and matrix within the frame I wedged a few pieces of anti-static foam in between.<br>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step9.jpg" alt="Drop">
+
         Almost done now. Install the paper-screen (diffuser - “led_clock_diff”) with the print facing upward.<br>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step10.jpg" alt="Drop">
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step9.jpg" alt="Drop">
+
         Finally place the 2nd piece of acrylics on top.<br>
-        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step11.jpg" alt="Drop">
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step10.jpg" alt="Drop">
+
         Fasten all screws with the corresponding nuts and voila … display done.<br>
+        <img width="100%" align="center" src="https://raw.github.com/2dom/PixelTimes/master/images/step11.jpg" alt="Drop">
+
 
 
 
