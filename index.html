@@ -143,8 +143,8 @@
 
 
         <h2>Create animations</h2>
-        If you would like to create your own animations, you can do so using any video or gif file as the source.
-        Once you have a bunch animations, download the following two scripts from <a href="https://github.com/2dom/PixelTimes">here</a>: image_to_array.sh and create_progmem.py and put them in the same directory. The former will convert and scale the movie/gif files to .rgb files containing raw 32x16 image data. The latter will then create convert all .rgb files to the anim_data.h required by PixelTimes.ino.<br>
+        If you would like to create your own animations, you can do so using any gif file as the source.
+        Once you have a bunch gifs, download the following two <a href="https://github.com/2dom/PixelTimes">script</a>: image_to_array.sh and create_progmem.py and put them in the same directory. The former will convert and scale the .gif files to .rgb files containing raw 32x16 image data. The latter will then create convert all .rgb files to the anim_data.h required by PixelTimes.ino.<br>
         So once you executed both scripts, simply copy the resulting anim_data.h in the folder with PixelTimes.ino.
         The final step is to compile the new firmware and flash it to the NodeMCU.<br>
         <br>
