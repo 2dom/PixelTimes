@@ -25,14 +25,14 @@
 
 //-- CONFIG
 string ntp = "0.de.pool.ntp.org";
-const char HOSTNAME[] = "pixeltime";
+const char HOSTNAME[] = "PixelTimes";
 //--
 
 Ticker display_ticker;
 
 int brightness=0;
 int dimm=0;
-int show_weather=true;
+int show_weather=false;
 bool shouldSaveWifiConfig = true;
 unsigned long button_press_time=0;
 
@@ -506,7 +506,6 @@ void ntpSet () {
 
 void setup() {
   Serial.begin(115200);
-  pinMode(BUILTIN_LED, OUTPUT);
   wifi_station_set_hostname(const_cast<char*>(HOSTNAME));
   WiFiManager wifiManager;
   wifiManager.setSaveConfigCallback(saveConfigCallback);
@@ -525,7 +524,7 @@ void setup() {
   Serial.println ("wifi connected ok");
   Serial.println(WiFi.localIP());
   ntpSet();
-  
+
 #ifdef SPIFFS_ENABLE
   SPIFFS.begin();
   Dir dir = SPIFFS.openDir("/");
