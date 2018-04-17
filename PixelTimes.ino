@@ -29,7 +29,6 @@ const char HOSTNAME[] = "pixeltime";
 //--
 
 Ticker display_ticker;
-Ticker ticker;
 
 int brightness=0;
 int dimm=0;
@@ -495,7 +494,6 @@ void configModeCallback (WiFiManager *myWiFiManager) {
   Serial.println("Entered config mode");
   Serial.println(WiFi.softAPIP());
   Serial.println(myWiFiManager->getConfigPortalSSID());
-  ticker.attach(0.2, toggle); // wifi config active, flash light faster
 }
 void ntpSet () {
   NTP.onNTPSyncEvent([](NTPSyncEvent_t event) {
@@ -509,7 +507,6 @@ void ntpSet () {
 void setup() {
   Serial.begin(115200);
   pinMode(BUILTIN_LED, OUTPUT);
-  ticker.attach(0.6, toggle); // pulse buildin led slowly while connecting to wifi
   wifi_station_set_hostname(const_cast<char*>(HOSTNAME));
   WiFiManager wifiManager;
   wifiManager.setSaveConfigCallback(saveConfigCallback);
@@ -527,7 +524,6 @@ void setup() {
   }
   Serial.println ("wifi connected ok");
   Serial.println(WiFi.localIP());
-  ticker.detach();
   ntpSet();
   
 #ifdef SPIFFS_ENABLE
