@@ -45,11 +45,12 @@ for file_name in file_names:
 				out_string+=printrgb888(byte0, byte1, byte2,out_string)
 				byte_count=byte_count+3;
 			if (byte_count>10):
-				out_string+="";
+				out_string+="\n";
 				byte_count=0;
 			byte0 = f.read(1)
 out_string+="0x00};";
 
 out_file = open("anim_data.h", "w");
+
 out_file.write(out_string);
 out_file.close();
