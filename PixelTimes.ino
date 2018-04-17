@@ -1,13 +1,13 @@
-#include <TimeLib.h>
+#include <TimeLib.h>   // https://github.com/PaulStoffregen/Time
 #include <Ticker.h>
 #include <EEPROM.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <time.h>
+#include <WiFiManager.h>   // https://github.com/tzapu/WiFiManager
 
 #include <ESP8266HTTPClient.h>
-
-#include <NtpClientLib.h>
+#include <NtpClientLib.h>   // https://github.com/2dom/NtpClient
 #include <PxMatrix.h>
 #include <Fonts/TomThumb.h>
 #include "FS.h"
@@ -23,13 +23,17 @@
   #define frame_size 1536
 #endif
 
+//-- CONFIG
+string ntp = "0.de.pool.ntp.org";
+const char HOSTNAME[] = "pixeltime";
+//--
 
 Ticker display_ticker;
 
 int brightness=0;
 int dimm=0;
 int show_weather=true;
-
+bool shouldSaveWifiConfig = true;
 unsigned long button_press_time=0;
 
 File ff;
@@ -467,51 +471,6 @@ void processSyncEvent(NTPSyncEvent_t ntpEvent) {
   }
 }
 
-
-
-// This is not 100% yet ... want to store wifi credentials in EPROM at some point
-void start_wifi()
-{
-
-  Serial.println("Reading config from EEPROM");
-  String esid;
-  String pass;
-  String ntp;
-
-  esid="xvxvxcvxccv";
-  pass="ycvcxv";
-  ntp="0.de.pool.ntp.org";
-  Serial.println("essid: " + esid);
-  Serial.println("pass: " + pass);
-  Serial.println("ntp: " + ntp);
-  //WiFi.mode(WIFI_OFF);
-  //delay(1000);
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(esid.c_str(), pass.c_str());
-  //server.close();
-
-  // Wait for connection
-  unsigned long start_connect=millis();
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-
-    if ((millis()-start_connect)>30000)
-    ESP.restart();
-
-  }
-  Serial.println(WiFi.localIP());
-  NTP.onNTPSyncEvent([](NTPSyncEvent_t event) {
-    ntpEvent = event;
-    syncEventTriggered = true;
-  });
-  NTP.begin(ntp.c_str(), 1, true);
-  NTP.setInterval(63);
-}
-
-//
-
-
 void button_pressed()
 {
   if ((millis()-button_press_time)<500)
@@ -522,10 +481,51 @@ void button_pressed()
 }
 String filenames[100];
 int no_files=0;
+
+void toggle () {
+  int powerLedState = digitalRead(BUILTIN_LED);
+  digitalWrite(BUILTIN_LED, !powerLedState);
+}
+void saveConfigCallback () {
+  Serial.println("Should save config");
+  shouldSaveWifiConfig = true;
+}
+void configModeCallback (WiFiManager *myWiFiManager) {
+  Serial.println("Entered config mode");
+  Serial.println(WiFi.softAPIP());
+  Serial.println(myWiFiManager->getConfigPortalSSID());
+}
+void ntpSet () {
+  NTP.onNTPSyncEvent([](NTPSyncEvent_t event) {
+    ntpEvent = event;
+    syncEventTriggered = true;
+  });
+  NTP.begin(ntp.c_str(), 1, true);
+  NTP.setInterval(63);
+}
+
 void setup() {
-  Serial.begin(9600);
-
-
+  Serial.begin(115200);
+  pinMode(BUILTIN_LED, OUTPUT);
+  wifi_station_set_hostname(const_cast<char*>(HOSTNAME));
+  WiFiManager wifiManager;
+  wifiManager.setSaveConfigCallback(saveConfigCallback);
+  wifiManager.setAPCallback(configModeCallback);
+  wifiManager.setMinimumSignalQuality();
+  wifiManager.setTimeout(300);
+  WiFi.setSleepMode(WIFI_NONE_SLEEP);
+  Serial.println ("start wifi connection");
+//  wifiManager.resetSettings(); // for testing / debugging
+  if (!wifiManager.autoConnect(HOSTNAME)) {
+    Serial.println("failed to connect and hit timeout");
+    delay(3000);
+    ESP.restart();
+    delay(5000);
+  }
+  Serial.println ("wifi connected ok");
+  Serial.println(WiFi.localIP());
+  ntpSet();
+  
 #ifdef SPIFFS_ENABLE
   SPIFFS.begin();
   Dir dir = SPIFFS.openDir("/");
@@ -550,20 +550,12 @@ void setup() {
   display.setTextColor(myWHITE);
   buffer_drawer.setFont(&TomThumb);
 
-
-
-
-  start_wifi();
-
   display_ticker.attach(0.001, display_updater);
   attachInterrupt(digitalPinToInterrupt(0),button_pressed,FALLING);
   dimm=1;
   yield();
   delay(3000);
-
-
 }
-
 
 
 // This draws the weather icons and temperature
