@@ -482,10 +482,6 @@ void button_pressed()
 String filenames[100];
 int no_files=0;
 
-void toggle () {
-  int powerLedState = digitalRead(BUILTIN_LED);
-  digitalWrite(BUILTIN_LED, !powerLedState);
-}
 void saveConfigCallback () {
   Serial.println("Should save config");
   shouldSaveWifiConfig = true;
