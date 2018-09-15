@@ -6,6 +6,8 @@
 #include <time.h>
 #include <WiFiManager.h>   // https://github.com/tzapu/WiFiManager
 
+#define ADAFRUIT_GFX_EXTRA 10
+
 #include <ESP8266HTTPClient.h>
 #include <NtpClientLib.h>   // https://github.com/2dom/NtpClient
 #include <PxMatrix.h>
